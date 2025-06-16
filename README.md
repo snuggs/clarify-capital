@@ -1,113 +1,122 @@
-# Clarify Capital Take Home 
+# 🚀 Clarify Capital Take-Home Assessment
 
-Thank you for your interest in joining Clarify Capital! This assessment is designed to evaluate your technical skills, code quality, and problem-solving approach. Please read the instructions carefully and reach out if you have any questions.
+Welcome! We're excited to see your skills in action. This assessment is designed to evaluate your technical expertise, code quality, and problem-solving approach. Please read the instructions carefully, and don’t hesitate to reach out with any questions.
 
-## Overview
+---
 
-Build a simple web application that manages Clients, Lenders and Loans. The goal is to demonstrate your ability to design, implement, and test a small but complete feature set.
+## 📝 Overview
 
-## Features
+Build a simple web application to manage **Clients**, **Lenders**, and **Loans**. The goal is to demonstrate your ability to design, implement, and test a small but complete feature set.
 
-Add 3 models
-1. Clients: 
-    - Has a name
-    - Has a credit score
-    - Any other attributes you see fit
-2. Lenders:
-    - Has a name
-    - Has a minimum loan amount
-    - Has an intrest rate
-    - Any other attributes you see fit
-3. Loan:
-    - belongs to a Client
-    - belongs to A Lender
-    - Any other attributes you see fit
+---
 
-## Getting Started
+## 🎯 Features
+
+You’ll be working with three core models:
+
+1. **Clients**
+    - Name
+    - Credit score
+    - (Add any other attributes you find useful)
+2. **Lenders**
+    - Name
+    - Minimum loan amount
+    - Interest rate
+    - (Add any other attributes you find useful)
+3. **Loans**
+    - Belongs to a Client
+    - Belongs to a Lender
+    - (Add any other attributes you find useful)
+
+---
+
+## 🚦 Getting Started
 
 ### Prerequisites
 
-- Ruby (version 2.7 or higher)
-- Rails (version 6.0 or higher)
-- SQLite3 (or any other database of your choice)
+- **Ruby** (2.7+)
+- **Rails** (6.0+)
+- **SQLite3** (or your preferred database)
 
 ### Installation
 
-1. Clone the repository:
+1. **Clone the repository**
+    ```sh
+    git clone <repository-url>
+    cd clarify-capital
+    ```
 
-   ```
-   git clone <repository-url>
-   cd clarify-capital
-   ```
+2. **Install dependencies**
+    ```sh
+    bundle install
+    ```
 
-2. Install the required gems:
+3. **Set up the database**
+    ```sh
+    rails db:create
+    rails db:migrate
+    ```
 
-   ```
-   bundle install
-   ```
+4. **Start the server**
+    ```sh
+    rails server
+    ```
 
-3. Set up the database:
+5. **Visit** [http://localhost:3000](http://localhost:3000) in your browser.
 
-   ```
-   rails db:create
-   rails db:migrate
-   ```
+---
 
-4. Start the Rails server:
+## 🏗️ TO DO Challenges
 
-   ```
-   rails server
-   ```
+1. **Migrations:** Create the schema for the models above.
+2. **Associations:** Set up the correct relationships between models.
+3. **CRUD:** Implement models, controllers, and views for:
+    - Full CRUD for Clients
+    - Create new Lender
+    - View all Lenders
+    - Create a Loan
+4. **Validations:** Add sensible validations (e.g., credit score ranges, minimum loan amounts).
+5. **Business Logic:** Implement a `create_best_loan` function to match a Client with the *best* Lender for a Loan.
+    - Consider: Client’s credit score, Lender’s minimum credit score, loan amount, Lender’s minimum loan amount, and interest rate.
+6. **Testing:** Write a test for `create_best_loan` using any testing framework.
 
-5. Open your browser and navigate to `http://localhost:3000`.
+### 🌟 Bonus (Optional)
 
-## TO DO Challenges
+- Add filtering/searching capabilities for Clients, Lenders, or Loans.
 
-1. Add migrations to create a schema for the given models
-2. Create appropriate connections between Models
-3. Add models, controllers and views for the following
-    - CRUD for Clients
-    - Create new Lendor
-    - View all Lendors
-    - Create a Loan 
-4. Create some validation for Clients and Lendors, ie: appropriate credit scores
-5. Create a function `create_best_loan` for a Client to get matched with THE BEST Lender for a Loan. 
-    - This should be a function which finds a loan for a Client using the Clients credit score, Lendor's minimum credit score, Loan amount, Lendors minimum Loan amount and interest rate. 
-6. Create a test for `create_best_loan` using any testing framework. 
+---
 
-### Bonus (Optional)
+## 💡 Expectations
 
-- Add filtering/searching capabilities.
-
-## Expectations
-
-- **Code Quality:** Write clean, maintainable, and well-documented code.
-- **Testing:** Include tests for critical logic.
-- **Documentation:** Provide clear setup instructions and a brief explanation of your approach.
+- **Code Quality:** Clean, maintainable, and well-documented code.
+- **Testing:** Tests for critical logic.
+- **Documentation:** Clear setup instructions and a brief explanation of your approach.
 - **Git Usage:** Commit your work incrementally with meaningful messages.
 
 ---
 
-## Submission
+## 📬 Submission
 
 1. Fork this repository or create a private repo and share access with us.
 2. Include a `README.md` with setup instructions and any notes.
-3. Submit your solution within 2 days.
+3. Submit your solution within **2 days**.
 
 ---
 
-## Evaluation Criteria
+## 🧐 Evaluation Criteria
 
 - Correctness and completeness
 - Code structure and readability
 - Problem-solving and design decisions
 - Testing and documentation
-- Bonus: Use of advanced features or best practices
+- **Bonus:** Use of advanced features or best practices
 
 ---
 
-We look forward to reviewing your submission!
+We look forward to seeing what you build. Good luck!
 
-## License
+---
+
+## 📝 License
 
 This project is open source and available under the MIT License.
