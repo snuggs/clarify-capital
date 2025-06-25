@@ -1,5 +1,8 @@
 class Lender < ApplicationRecord
+  MINIMUM_RATE = 0.060 # based off Clarify Capital site
+  
   has_many :clients, through: :loans
+  has_many :loans
 
   validates :name, presence: true
 
