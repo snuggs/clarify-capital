@@ -44,6 +44,8 @@ A simple web application to manage **Clients**, **Lenders**, and **Loans**.
 
 ### Installation
 
+_** :Warning: All commits have been flattened and rebased into a smaller set for ease of integration upstream**_
+
 1. **Clone the repository**
     ```sh
     git clone <repository-url>
