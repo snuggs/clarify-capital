@@ -1,16 +1,44 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>ClarifyCapital</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<!doctype html>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+<html lang=en>
 
-  <body>
-    <%= yield %>
-  </body>
-</html>
+<head>
+  <title>Clarify Capital</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', 'data-turbo-track': 'reload' %>
+  <%= javascript_importmap_tags %>
+</head>
+
+<body role=application>
+
+<header role=banner>
+  <a title='Clarify Capital Home' href=/><img alt=logo src=/logo.svg></a>
+
+  <nav>
+    Main Navigation
+    <ul>
+     <li><%= link_to 'Lenders', lenders_path %>
+     <li><%= link_to 'Clients', clients_path %>
+     <li><%= link_to 'Loans', loans_path %>
+    </ul>
+  </nav>
+</header>
+
+<main id=content>
+<%= yield %>
+</main>
+
+<%- if controller_name == 'main' && action_name == 'index' %>
+  <%= render 'main/aside' %>
+<%- end %>
+
+<footer role=contentinfo>
+  <strong><em>&copy; 2025 Clarify Capital LLC.</em></strong>
+
+  <a title='Terms of Use' href=#>Terms of Use</a>
+  <a title='Privacy Policy' href=3>Privacy Policy</a>
+  <a title='Site Map' href=#>Sitemap</a>
+</footer>

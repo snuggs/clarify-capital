@@ -1,0 +1,11 @@
+<% content_for :title, 'New loan' %>
+
+<h1>New Loan</h1>
+
+<%= render 'form', loan: @loan, amount: @amount, lenders: @lender.blank? ? @lenders : @lender %>
+
+<hr>
+
+<div>
+  <%= link_to 'Back to loans', loans_path %>
+</div>

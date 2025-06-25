@@ -13,3 +13,138 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  position: relative;
+  box-sizing: border-box;
+}
+
+body > header[role=banner] {
+  top: 0;
+  z-index: 1;
+  display: block;
+  position: sticky;
+  background: Canvas;
+  border-bottom: 0.1em solid;
+}
+body > header[role=banner] nav {
+  font-size: smaller;
+}
+body > header[role=banner] nav > ul {
+  margin: 0;
+  padding: 0;
+  font-size: larger;
+  display: inline-block;
+}
+
+body > header[role=banner] nav > ul li {
+  font-size: larger;
+  font-weight: bold;
+  padding: .5ch .5em;
+
+  display: inline-block;
+
+  &:hover {
+    color: Canvas;
+    background: CanvasText;
+  }
+}
+body > header[role=banner] nav
+  a:is( :link, :active, :visited ) { color: #6495ed; }
+
+body > aside[role=complementary] {}
+
+body > footer[role=contentinfo] {
+  top: auto;
+  bottom: 0;
+  z-index: 1;
+  display: block;
+  position: sticky;
+  font-size: smaller;
+  background: Canvas;
+  border-top: 0.2em solid;
+}
+header, h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+main {
+  min-height: 100vh;
+}
+main > figure {
+  max-width: 80%;
+  margin: 1em auto;
+}
+main > figure > img {
+  max-width: 100%;
+}
+
+menu {}
+menu li {
+  display: inline-block;
+}
+
+
+/* forms */
+main > form {
+  padding-left: 25vw;
+  background:
+    transparent top left / 25vw url(/head.svg) no-repeat;
+}
+select, input:is( :not([type]), [type=text], [type=number], [type=date] ) {
+  margin: .5ch 1ch;
+  padding: .5ch 1ch;
+  font-size: larger;
+
+  border-radius: .5ch;
+  border: 0.1ch solid grey;
+}
+button, [role=button], [type=button], [type=submit], [type=reset] {
+  margin: .5ch 1ch;
+  font-weight: bold;
+  font-size: 1.125em;
+  text-align: center;
+  line-height: 1.5em;
+  padding: .75em 1.2em;
+
+  width: auto;
+  color: Canvas;
+  flex: 0 0 auto;
+  cursor: pointer;
+  border-radius: .75em;
+  background-color: #6495ed;
+  border: .1ch solid;
+  border-color: transparent;
+  touch-action: manipulation;
+
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 1ch 1em;
+  background: mustard;
+  display: inline-block;
+
+  &:hover {
+    color:  #6495ed;
+    border-color: #6495ed;
+    background-color: Canvas;
+  }
+
+  &:focus-visible {
+    box-shadow: none;
+    outline-offset: 2px;
+    outline: 2px solid transparent;
+  }
+
+  h1 + & {
+    margin: 0;
+    font-size: 1em;
+    display: inline-block;
+  }
+}
+
+#lenders article {
+  border-radius: 1ch;
+  borderr: 0.1ch solid;
+}

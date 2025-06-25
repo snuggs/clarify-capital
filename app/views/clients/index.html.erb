@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Clients" %>
+
+<h1>Clients</h1>
+
+<section id='clients'>
+  <%- @clients.each do |client| %>
+    <article id='<%= client.id %>'>
+      <%= render client %>
+
+      <footer>
+        <%= link_to 'Show this client', client %>
+      </footer>
+    </article>
+  <%- end %>
+</section>
+
+<%= link_to 'New client', new_client_path, role: :button %>
