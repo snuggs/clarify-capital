@@ -14,7 +14,7 @@
   Lender.create! \
     name: Faker::Company.name,
     minimum_credit: rand( 500..700 ),
-    interest: rand(0.060..0.250),
+    interest: rand(Lender::MINIMUM_RATE..0.250),
     minimum_loan: rand(500..10_000)
 end
 
