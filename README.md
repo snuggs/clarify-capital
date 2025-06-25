@@ -1,32 +1,34 @@
 # 🚀 Clarify Capital Take-Home Assessment
 
-Welcome! We're excited to see your skills in action. This assessment is designed to evaluate your technical expertise, code quality, and problem-solving approach. Please read the instructions carefully, and don’t hesitate to reach out with any questions.
-
 ---
 
 ## 📝 Overview
 
-Build a simple web application to manage **Clients**, **Lenders**, and **Loans**. The goal is to demonstrate your ability to design, implement, and test a small but complete feature set.
+A simple web application to manage **Clients**, **Lenders**, and **Loans**.
 
 ---
 
 ## 🎯 Features
 
-You’ll be working with three core models:
-
 1. **Clients**
-    - Name
-    - Credit score
-    - (Add any other attributes you find useful)
+    - First Name
+    - Last Name
+    - Credit Score
+    - Phone Number
+    - Email Address
 2. **Lenders**
     - Name
     - Minimum loan amount
-    - Interest rate
-    - (Add any other attributes you find useful)
+    - Maximum Loan Amount _(Based on the existing $5,000,000 from Clarify Capital site)_
+    - Minimum Credit
+    - Interest rate _( in 0.000 decimal format for conversion i.e. `10.5%`)
 3. **Loans**
     - Belongs to a Client
     - Belongs to a Lender
-    - (Add any other attributes you find useful)
+    - Amount
+    - Start Date
+    - Due Date
+    - Status
 
 ---
 
@@ -34,8 +36,8 @@ You’ll be working with three core models:
 
 ### Prerequisites
 
-- **Ruby** (2.7+)
-- **Rails** (6.0+)
+- **Ruby** (3.4+)
+- **Rails** (7.2+)
 - **SQLite3** (or your preferred database)
 
 ### Installation
@@ -56,64 +58,51 @@ You’ll be working with three core models:
     rails db:create
     rails db:migrate
     ```
+4. **Run `CreateBestLoan` test**
+    ```sh
+    rails test test/create_best_loan_test.rb
+    ```
 
-4. **Start the server**
+5. **Run All Tests**
+    ```sh
+    rails test
+    ```
+6. **Start the server**
     ```sh
     rails server
     ```
 
-5. **Visit** [http://localhost:3000](http://localhost:3000) in your browser.
+7. **Visit** [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
 ## 🏗️ TO DO Challenges
 
-1. **Migrations:** Create the schema for the models above.
-2. **Associations:** Set up the correct relationships between models.
-3. **CRUD:** Implement models, controllers, and views for:
-    - Full CRUD for Clients
-    - Create new Lender
-    - View all Lenders
-    - Create a Loan
-4. **Validations:** Add sensible validations (e.g., credit score ranges, minimum loan amounts).
-5. **Business Logic:** Implement a `create_best_loan` function to match a Client with the *best* Lender for a Loan.
-    - Consider: Client’s credit score, Lender’s minimum credit score, loan amount, Lender’s minimum loan amount, and interest rate.
-6. **Testing:** Write a test for `create_best_loan` using any testing framework.
+1. [x] **Migrations:** Create the schema for the models above.
+2. [x] **Associations:** Set up the correct relationships between models.
+3. [x] **CRUD:** Implement models, controllers, and views for:
+    - [x] Full CRUD for Clients
+    - [x] Create new Lender
+    - [x] View all Lenders
+    - [x] Create a Loan
+4. [x] **Validations:** Add sensible validations (e.g., credit score ranges, minimum loan amounts).
+5. [x] **Business Logic:** Implement a `create_best_loan` function to match a Client with the *best* Lender for a Loan.
+    - [x] Consider: Client’s credit score, Lender’s minimum credit score, loan amount, Lender’s minimum loan amount, and interest rate.
+6. [x] **Testing:** Write a test for `create_best_loan` using any testing framework.
 
 ### 🌟 Bonus (Optional)
 
-- Add filtering/searching capabilities for Clients, Lenders, or Loans.
+- [x] filtering/searching capabilities for Clients, Lenders, or Loans is native to New Loan Creation.
 
 ---
 
-## 💡 Expectations
+## 💡 Summary
+  - The intention is to create a seamless user experience that has slight intelligence based on user actions.
+  - For instance, the _"Ready to grow your business?"_ section will filter `Lender`s based on the `amount` being greater than the `minimum_loan_amount`.
+  - By default all `Lender`s are sorted for best `interest` rate & `amount` by default.
+  - About 5 steps were removed by taking this approach to where the goal is to get the loan application completed in the simplest steps possible.
 
-- **Code Quality:** Clean, maintainable, and well-documented code.
-- **Testing:** Tests for critical logic.
-- **Documentation:** Clear setup instructions and a brief explanation of your approach.
-- **Git Usage:** Commit your work incrementally with meaningful messages.
-
----
-
-## 📬 Submission
-
-1. Fork this repository or create a private repo and share access with us.
-2. Include a `README.md` with setup instructions and any notes.
-3. Submit your solution within **2 days**.
-
----
-
-## 🧐 Evaluation Criteria
-
-- Correctness and completeness
-- Code structure and readability
-- Problem-solving and design decisions
-- Testing and documentation
-- **Bonus:** Use of advanced features or best practices
-
----
-
-We look forward to seeing what you build. Good luck!
+# THANK YOU FOR THE OPPORTUNITY! :smile:
 
 ---
 
