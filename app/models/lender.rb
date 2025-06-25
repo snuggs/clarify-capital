@@ -18,8 +18,17 @@ class Lender < ApplicationRecord
     numericality: { greater_than: 500 },
     allow_nil: false
 
+  validate :minimum_interest_rate
+
   def self.minimum_loan
     order(:minimum_loan)
       .pluck(:minimum_loan).first
+  end
+
+  private
+
+  def minimum_interest_rate
+    interest >= Lender::MINIMUM_RATE \
+      || errors.add( :interest, "Must be at least #{Lender::MINIMUM_RATE}" )
   end
 end
