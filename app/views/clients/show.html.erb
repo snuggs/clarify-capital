@@ -1,0 +1,9 @@
+<output role=status style='color: green'><%= notice %></output>
+
+<%= render @client %>
+
+<menu>
+  <li><%= link_to 'Edit this client', edit_client_path( @client ), role: :button %>
+  <li><%= button_to 'Destroy this client', @client, method: :delete %>
+  <li><%= link_to 'Back to clients', clients_path %>
+</menu>

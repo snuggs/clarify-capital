@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, 'Lenders' %>
+
+<h1>Lenders</h1>
+<%= link_to 'New Lender', new_lender_path, role: :button %>
+
+<section id='lenders'>
+  <%- @lenders.each do |lender| %>
+    <article id='<%= lender.id %>'>
+      <%= render lender %>
+
+      <footer>
+        <%= link_to 'Show this lender', lender, role: :button %>
+      </footer>
+    </article>
+  <%- end %>
+</section>

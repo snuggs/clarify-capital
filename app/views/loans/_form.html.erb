@@ -1,0 +1,45 @@
+<%= form_with(model: loan) do |form| %>
+
+  <%= form.hidden_field :client_id, value: session[:client_id] %>
+
+  <% if loan.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(loan.errors.count, "error") %> prohibited this loan from being saved:</h2>
+
+      <ul>
+        <% loan.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :lender_id, style: "display: block" %>
+    <%= form.select :lender_id, lenders&.collect { |l| [ lender_with_minimum( l ), l.id ] } %>
+  </div>
+
+  <div>
+    <%= form.label :amount, style: "display: block" %>
+    <%= form.number_field :amount, min: Lender.minimum_loan, value: amount, placeholder: 'Up to $5,000,000' %>
+  </div>
+
+  <div>
+    <%= form.label :start, style: "display: block" %>
+    <%= form.date_field :start, value: Date.today %>
+  </div>
+
+  <div>
+    <%= form.label :due, style: "display: block" %>
+    <%= form.date_field :due %>
+  </div>
+
+  <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.select :status, ( action_name == 'new' ) ? [ :new ] : Loan::STATUS %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

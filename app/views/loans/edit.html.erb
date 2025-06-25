@@ -1,0 +1,12 @@
+<% content_for :title, "Editing loan" %>
+
+<h1>Editing loan</h1>
+
+<%= render 'form', loan: @loan %>
+
+<br>
+
+<menu>
+  <li><%= link_to 'Show this loan', @loan, role: :button %> |
+  <li><%= link_to 'Back to loans', loans_path, role: :button %>
+</menu>

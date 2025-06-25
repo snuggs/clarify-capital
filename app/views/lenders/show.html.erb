@@ -1,0 +1,8 @@
+<output role=status style='color: green'><%= notice %></output>
+
+<%= render @lender %>
+
+<menu>
+  <li><%= link_to 'Apply For Loan', new_loan_path( lender_id: @lender.id ), role: :button %>
+  <li><%= link_to 'Back to Lenders', lenders_path %>
+</menu>

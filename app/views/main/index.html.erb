@@ -1,0 +1,25 @@
+<h1>You run your business. We get you low rate funding.</h1>
+
+<p>Clarify treats small business owners like family.
+Get an instant business loan up to <em>$5M</em>.
+
+<hr>
+
+<%= link_to 'See your loan options', lenders_path, role: :button, title: 'See your loan options' %>
+<a title='How it works' href='#'>How it works</a>
+
+<figure>
+  <img alt='People group' src=/people.svg>
+</figure>
+
+<form method=get action='<%= new_loan_path %>' >
+  <h2>Ready to grow your business?</h2>
+
+  <p>
+    Get approved for a small business loan today with APRs starting at just 6%. Fast online application that only takes 2 mins. Same-day funding for credit scores over 550.
+  </p>
+
+  <input required name=amount type=number min='<%= Lender.minimum_loan %>'
+    step=100 pattern='^\d*(\.\d{0,2})?$' placeholder='$ Loan Amount'>
+    <button type=submit>See Your Options</button>
+</form>
