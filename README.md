@@ -1,6 +1,8 @@
 # 🚀 Clarify Capital Take-Home Assessment
 
 ---
+![Screenshot_20250625-133117_Chrome](https://github.com/user-attachments/assets/ff412392-eaa2-48c6-a832-a23544842c24)
+
 
 ## 📝 Overview
 
